@@ -65,7 +65,7 @@ class signup() : AppCompatActivity(), Parcelable {
             Toast.makeText(this,"Debe Seleccionar terminos y condiciones",Toast.LENGTH_LONG).show()
         else
             if(!android.util.Patterns.EMAIL_ADDRESS.matcher(etCorreo.text).matches())
-                etCorreo.error = "El formato del Correo es incorrecto"
+                etCorreo.error = "El formato del Mail es incorrecto"
             if (etCorreo.text.toString()!=etConfirmaCorreo.text.toString())
                   Toast.makeText(this,"El correo y la confirmación de correo deben ser iguales",Toast.LENGTH_LONG).show()
             else
