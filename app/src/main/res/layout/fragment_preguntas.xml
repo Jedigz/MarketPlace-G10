@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".PreguntasFragment">
+
+    <EditText
+        android:id="@+id/edtTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Texto" />
+
+    <EditText
+        android:id="@+id/edtopcion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Opción 1" />
+
+    <EditText
+        android:id="@+id/edtopcion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Opción 2" />
+
+    <EditText
+        android:id="@+id/edtOpcion3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Opción 3" />
+    <EditText
+        android:id="@+id/edtRespuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Respuesta" />
+    <EditText
+        android:id="@+id/edtarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Área" />
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar" />
+
+</LinearLayout>

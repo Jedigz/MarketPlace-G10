@@ -36,7 +36,7 @@ class signup() : AppCompatActivity(), Parcelable {
         }
     }
 
-    fun fnCrearcuenta(view: android.view.View) {
+    fun fnCrearcuenta(view: View) {
 
         val checkBox: CheckBox = findViewById<View>(R.id.cbTerminos) as CheckBox
         val etNombres = findViewById<EditText>(R.id.etNombres)

@@ -23,15 +23,14 @@ class MainActivity : AppCompatActivity() {
     fun onRegistrese(view: View) {
         val intento=Intent(this,signup::class.java)
         startActivity(intento)
-
     }
-    fun onLogin(view: View) {
-        if (edtUsername!!.text.toString()=="123@abc.com")
-            if(edtPassword!!.text.toString()=="1234"){
-                val intento= Intent(this,signup::class.java)
-                startActivity(intento)
 
-            }
+    fun onLogin(view: View) {
+        /*if (edtUsername!!.text.toString()=="123@abc.com")
+            if(edtPassword!!.text.toString()=="1234"){*/
+                startActivity(Intent(this,MainPreguntas::class.java))
+
+            //}
 
     }
 
