@@ -10,67 +10,73 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_margin="10dp"
         android:gravity="center"
-        android:layout_margin="10dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="120dp"
-            android:src="@drawable/saberpro"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:src="@drawable/saberpro" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_margin="10dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username "
+            android:text="E-mail"
             android:textSize="20sp" />
+
         <EditText
-            android:id="@+id/edtUserName"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="123@abc.com"/>
+            android:hint="123@abc.com"
+            android:inputType="textEmailAddress" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Password "
+            android:text="Password"
             android:textSize="20sp" />
+
         <EditText
             android:id="@+id/edtpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:password="true"
-            android:hint="********"/>
+            android:hint="********"
+            android:password="true" />
+
         <Button
             android:id="@+id/btningresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="onLogin"
-            android:text="INGRESAR"/>
+            android:text="INGRESAR" />
+
         <Button
             android:id="@+id/btnregistrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="onRegistrese"
-            android:text="REGISTRATE"/>
+            android:text="REGISTRATE" />
+
         <TextView
             android:id="@+id/btnolvidoclave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¿Olvidaste tu clave?"
             android:gravity="center"
+            android:text="¿Olvidaste tu clave?"
             android:textSize="20sp" />
 
     </LinearLayout>

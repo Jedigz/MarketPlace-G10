@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.icfesg10.database.saberProDB
+import android.widget.EditText
+import com.example.icfesg10.database.SaberProDB
 import com.example.icfesg10.model.Pregunta
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,29 +33,29 @@ class MenuProfesorActivity : Fragment() {
     }
 
 
-    private fun verpregunta( fragmento: View, idPregunta: Int) {
-        var  pregunta: Pregunta = Pregunta( 0, "", "" , "","","","","")
+    private fun verpregunta(fragmento: View, idPregunta: Int) {
+        var pregunta: Pregunta = Pregunta(0, "", "", "", "", "", "", "")
 
-        CoroutineScope( Dispatchers.IO ).launch {
+        CoroutineScope(Dispatchers.IO).launch {
             //obtener la instancia de la BDs
-            val database = context?.let { saberProDB.getDatabase(it) }
+            val database = context?.let { SaberProDB.getDatabase(it) }
 
             //consultamos la pelicula x ID en la BDs
             pregunta = database?.SaberProDAO()?.getPreguntaPorId(idPregunta)!!
 
-            val edtArea = fragmento.findViewById<EditText>( R.id.edtarea)
-            val edtDescripcion = fragmento.findViewById<EditText>( R.id.edtDescripcion)
-            edtArea.setText( pregunta.Area)
-            edtDescripcion.setText( pregunta.Descripcion.toString() )
+            val edtArea = fragmento.findViewById<EditText>(R.id.edtarea)
+            val edtDescripcion = fragmento.findViewById<EditText>(R.id.edtDescripcion)
+            edtArea.setText(pregunta.Area)
+            edtDescripcion.setText(pregunta.Descripcion.toString())
 
         }
         salir()
     }
 
-        private fun salir(){
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.remove( this )
-                ?.commit()
-        }
+    private fun salir() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.remove(this)
+            ?.commit()
+    }
 }
 

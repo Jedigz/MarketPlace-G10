@@ -1,17 +1,19 @@
 package com.example.icfesg10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.example.icfesg10.database.saberProDB
+import com.example.icfesg10.database.SaberProDB
 import com.example.icfesg10.model.Pregunta
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main_preguntas.*
 
-class MainPreguntas() : AppCompatActivity(),Parcelable {
+class MainPreguntas() : AppCompatActivity(), Parcelable {
     constructor(parcel: Parcel) : this() {
     }
 
@@ -20,7 +22,7 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
         setContentView(R.layout.activity_main_preguntas)
 
         var listaPreguntas = emptyList<Pregunta>()
-        val database = saberProDB.getDatabase(this)
+        val database = SaberProDB.getDatabase(this)
 
         database.SaberProDAO().getAllPreguntas().observe(this, Observer {
             listaPreguntas = it
@@ -51,7 +53,8 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
 
             supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragment_container_view,
+                .replace(
+                    R.id.fragment_container_view,
                     DetallePreguntaFragment::class.java,
                     pregunta,
                     "detallePregunta"
@@ -78,6 +81,12 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
         override fun newArray(size: Int): Array<MainPreguntas?> {
             return arrayOfNulls(size)
         }
+    }
+
+    fun signOut(view: View) {
+        val currentUser = Firebase.auth
+        currentUser.signOut()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
 }

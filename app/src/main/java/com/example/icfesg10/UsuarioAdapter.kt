@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.icfesg10.model.Usuario
 
-class UsuarioAdapter (private val mContext: Context, val listaUsuarios:List<Usuario>)
-    : ArrayAdapter<Usuario>(mContext,0,listaUsuarios), Parcelable {
+class UsuarioAdapter(private val mContext: Context, val listaUsuarios: List<Usuario>) :
+    ArrayAdapter<Usuario>(mContext, 0, listaUsuarios), Parcelable {
     constructor(parcel: Parcel) : this(
         TODO("mContext"),
         TODO("listaUsuarios")
@@ -18,7 +18,8 @@ class UsuarioAdapter (private val mContext: Context, val listaUsuarios:List<Usua
     }
 
     override fun getView(posicion: Int, view: View?, viewGroup: ViewGroup): View {
-        val layout =LayoutInflater.from(mContext).inflate(R.layout.preguntas_item, viewGroup, false)
+        val layout =
+            LayoutInflater.from(mContext).inflate(R.layout.preguntas_item, viewGroup, false)
         /*val usuario = listaUsuarios[posicion]
         layout.tvTexto.text = usuario    //usuario.id.toCtring().Int()  o "${usuario.id}"
         layout.tvOpcion1.text = usuario.Opcion1
