@@ -7,11 +7,12 @@ import androidx.room.PrimaryKey
 data class Pregunta(
     @PrimaryKey (autoGenerate = true)
     val id:Int,
-    val PreTexto:String,
-    val Opcion1:String,
-    val Opcion2:String,
-    val Opcion3:String,
-    val Respuesta:String,
-    val Area: String
+    val PreTexto: String,
+    val Opcion1: String,
+    val Opcion2: String,
+    val Opcion3: String,
+    val Respuesta: String,
+    val Area: String,
+    val Descripcion: String
 
 )

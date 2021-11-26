@@ -33,7 +33,7 @@ class MenuProfesorActivity : Fragment() {
 
 
     private fun verpregunta( fragmento: View, idPregunta: Int) {
-        var  pregunta: Pregunta = Pregunta( 0, "", "" , "","","","")
+        var  pregunta: Pregunta = Pregunta( 0, "", "" , "","","","","")
 
         CoroutineScope( Dispatchers.IO ).launch {
             //obtener la instancia de la BDs
@@ -42,12 +42,11 @@ class MenuProfesorActivity : Fragment() {
             //consultamos la pelicula x ID en la BDs
             pregunta = database?.SaberProDAO()?.getPreguntaPorId(idPregunta)!!
 
-            /*val edtTitulo = fragmento.findViewById<EditText>( R.id.edtTitulo)
-            val edtDuracion = fragmento.findViewById<EditText>( R.id.edtDuracion)
-            val edtProtagonista = fragmento.findViewById<EditText>( R.id.edtProtagonista)
-            edtTitulo.setText( pelicula.titulo )
-            edtDuracion.setText( pelicula.duracion.toString() )
-            edtProtagonista.setText( pelicula.protagonista )*/
+            val edtArea = fragmento.findViewById<EditText>( R.id.edtarea)
+            val edtDescripcion = fragmento.findViewById<EditText>( R.id.edtDescripcion)
+            edtArea.setText( pregunta.Area)
+            edtDescripcion.setText( pregunta.Descripcion.toString() )
+
         }
         salir()
     }

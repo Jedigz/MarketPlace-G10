@@ -23,7 +23,7 @@ class DetallePreguntaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val fragmento = inflater.inflate(R.layout.fragment_detalle_pregunta, container, false)
 
-        //contexto de la aplicacion}
+        //contexto de la aplicacion
         val context = activity?.applicationContext
 
         val idPregunta =  requireArguments().getInt("idPregunta")
@@ -51,7 +51,7 @@ class DetallePreguntaFragment : Fragment() {
     private fun eliminarPregunta(idPregunta: Int) {
         CoroutineScope( Dispatchers.IO ).launch {
             val database = context?.let { saberProDB.getDatabase(it) }
-            val pregunta = Pregunta(idPregunta, "", "", "","","","")
+            val pregunta = Pregunta(idPregunta, "", "", "","","","","")
             database?.SaberProDAO()?.deletePregunta(pregunta)
         }
         salir()
@@ -68,8 +68,10 @@ class DetallePreguntaFragment : Fragment() {
                 fragmento.findViewById<EditText>(R.id.edtOpcion2).text.toString(),
                 fragmento.findViewById<EditText>(R.id.edtOpcion3).text.toString(),
                 fragmento.findViewById<EditText>(R.id.edtRespuesta).text.toString(),
-                fragmento.findViewById<EditText>(R.id.edtarea).text.toString()
-           )
+                fragmento.findViewById<EditText>(R.id.edtarea).text.toString(),
+                fragmento.findViewById<EditText>(R.id.edtDescripcion).text.toString()
+
+            )
             database?.SaberProDAO()?.updatePregunta(pregunta)
         }
         activarActualizar(fragmento, false)
@@ -78,7 +80,7 @@ class DetallePreguntaFragment : Fragment() {
     }
 
     private fun verPregunta( fragmento: View, idPregunta: Int) {
-        var pregunta = Pregunta(idPregunta, "", "", "","","","")
+        var pregunta = Pregunta(idPregunta, "", "", "","","","","")
 
         CoroutineScope( Dispatchers.IO ).launch {
             //obtener la instancia de la BDs
@@ -86,18 +88,20 @@ class DetallePreguntaFragment : Fragment() {
 
             pregunta = database?.SaberProDAO()?.getPreguntaPorId(idPregunta)!!
 
-            val edtexto = fragmento.findViewById<EditText>( R.id.edtexto)
+  /*          val edtexto = fragmento.findViewById<EditText>( R.id.edtexto)
             val edtOpcion1 = fragmento.findViewById<EditText>( R.id.edtOpcion1)
             val edtOpcion2 = fragmento.findViewById<EditText>( R.id.edtOpcion2)
             val edtOpcion3 = fragmento.findViewById<EditText>( R.id.edtOpcion3)
-            val edtRespuesta = fragmento.findViewById<EditText>( R.id.edtRespuesta)
+            val edtRespuesta = fragmento.findViewById<EditText>( R.id.edtRespuesta)*/
             val edtArea = fragmento.findViewById<EditText>( R.id.edtarea)
-            edtexto.setText( pregunta.PreTexto )
+            val edtDescription = fragmento.findViewById<EditText>( R.id.edtDescripcion)
+/*            edtexto.setText( pregunta.PreTexto )
             edtOpcion1.setText( pregunta.Opcion1)
             edtOpcion2.setText( pregunta.Opcion2)
             edtOpcion3.setText( pregunta.Opcion3)
-            edtRespuesta.setText( pregunta.Respuesta)
+            edtRespuesta.setText( pregunta.Respuesta)*/
             edtArea.setText(pregunta.Area)
+            edtDescription.setText(pregunta.Descripcion)
 
         }
     }
@@ -109,6 +113,7 @@ class DetallePreguntaFragment : Fragment() {
         fragmento.findViewById<EditText>( R.id.edtOpcion3).setEnabled( activo )
         fragmento.findViewById<EditText>( R.id.edtRespuesta).setEnabled( activo )
         fragmento.findViewById<EditText>( R.id.edtarea).setEnabled( activo )
+        fragmento.findViewById<EditText>( R.id.edtDescripcion).setEnabled( activo )
 
         fragmento.findViewById<ImageButton>(R.id.btnActualizar).visibility = View.VISIBLE
     }
