@@ -13,12 +13,12 @@
         android:orientation="vertical"
         android:layout_margin="10dp"
         android:layout_weight="1">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="Crea tu cuenta y realiza tus compras"
-            ></TextView>
+            android:text="Crea tu cuenta"
+            android:textSize="30sp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
@@ -45,6 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombres"
+            android:inputType="textCapWords"/>
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Usuario"
             android:inputType="textCapWords"/>
         <EditText
             android:id="@+id/etCorreo"

@@ -13,12 +13,13 @@ class PreguntasAdapter (private val mContext: Context, val listaPreguntas:List<P
     override fun getView (posicion: Int, view: View?, viewGroup: ViewGroup): View {
         val layout = LayoutInflater.from(mContext).inflate(R.layout.preguntas_item,viewGroup,false)
         val pregunta = listaPreguntas[posicion]
-        layout.tvTexto.text=pregunta.PreTexto
+        /*layout.tvTexto.text=pregunta.PreTexto
         layout.tvOpcion1.text=pregunta.Opcion1
         layout.tvOpcion2.text=pregunta.Opcion2
         layout.tvOpcion3.text=pregunta.Opcion3
-        layout.tvRespuesta.text=pregunta.Respuesta
+        layout.tvRespuesta.text=pregunta.Respuesta*/
         layout.tvArea.text=pregunta.Area
+        layout.tvDescripcion.text=pregunta.Descripcion
         return layout
     }
 }

@@ -25,7 +25,6 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
         database.SaberProDAO().getAllPreguntas().observe(this, Observer {
             listaPreguntas = it
             val adapter = PreguntasAdapter(this, listaPreguntas)
-
             lvPreguntas.adapter = adapter
         })
 
@@ -59,7 +58,6 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
                 )
                 .commit()
 
-            Toast.makeText(this, "Mensaje ", Toast.LENGTH_SHORT).show()
         }
 
     }

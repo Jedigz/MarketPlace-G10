@@ -39,7 +39,12 @@
         android:id="@+id/edtarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Área" />
+        android:hint="Categoria" />
+    <EditText
+        android:id="@+id/edtDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción" />
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"

@@ -29,9 +29,8 @@ class PreguntasFragment : Fragment() {
             val context = activity?.applicationContext
 
             //Instanciamos un objeto pelicula par Guardar en la BD
-            val pregunta =  Pregunta( 0, "${edtTexto.text}", "${edtopcion1.text}", "${edtopcion2.text}","${edtOpcion3.text}","${edtRespuesta.text}","${edtarea.text}")
+            val pregunta =  Pregunta( 0, "${edtTexto.text}", "${edtopcion1.text}", "${edtopcion2.text}","${edtOpcion3.text}","${edtRespuesta.text}","${edtarea.text}","${edtDescripcion.text}")
 
-            //insertamos en la BDs utilizando una Coroutine
             CoroutineScope( Dispatchers.IO ).launch {
                 val database = context?.let{ saberProDB.getDatabase( it ) }
                 if ( database != null){
