@@ -67,5 +67,11 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    private fun cerrarSesion(){
+        Firebase.auth.signOut()
+        val intent =Intent (this, MainActivity::class.java)
+        startActivity(intent)
+
+    }
 
 }

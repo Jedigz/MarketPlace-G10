@@ -1,5 +1,6 @@
 package com.example.marketplaceg10
 
+import android.os.Binder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,17 +9,53 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ListView
 import com.example.marketplaceg10.database.saberProDB
+import com.example.marketplaceg10.databinding.FragmentPreguntasBinding
 import com.example.marketplaceg10.model.Pregunta
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_preguntas.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import com.google.firebase.ktx.initialize
+import java.util.*
+
 
 class PreguntasFragment : Fragment() {
+    private lateinit var binding: FragmentPreguntasBinding
+
+
+    val database = Firebase.database
+    val dbReferencePreguntas =database.getReference("preguntas")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+   /*     binding =FragmentPreguntasBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        Firebase.initialize(this)
+
+        binding.btnGuardar.setOnClickListener{
+            guardarPreguntas()
+        }*/
+
     }
+/*
+    private fun guardarPreguntas() {
+        var pregunta = Pregunta(
+            UUID.randomUUID().toString(),
+            binding.edtTexto.toString(),
+            binding.edtopcion1.toString(),
+            binding.edtopcion2.toString(),
+            binding.edtOpcion3.toString(),
+            binding.edtRespuesta.toString(),
+        )
+      dbReferencePreguntas.child(pregunta.id)
+    }
+*/
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmento = inflater.inflate(R.layout.fragment_preguntas, container, false)

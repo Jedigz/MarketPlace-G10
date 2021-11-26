@@ -1,5 +1,6 @@
 package com.example.marketplaceg10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -8,16 +9,32 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.marketplaceg10.database.saberProDB
+import com.example.marketplaceg10.databinding.ActivityMainPreguntasBinding
+import com.example.marketplaceg10.databinding.ActivitySignupBinding
 import com.example.marketplaceg10.model.Pregunta
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main_preguntas.*
 
 class MainPreguntas() : AppCompatActivity(),Parcelable {
+    private lateinit var binding: ActivityMainPreguntasBinding
+    private lateinit var auth:FirebaseAuth
+
     constructor(parcel: Parcel) : this() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_preguntas)
+        //setContentView(R.layout.activity_main_preguntas)
+        binding=ActivityMainPreguntasBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        auth = Firebase.auth
+
+        binding.btnCerrarsesion.setOnClickListener{
+            cerrarsesion()
+        }
 
         var listaPreguntas = emptyList<Pregunta>()
         val database = saberProDB.getDatabase(this)
@@ -60,6 +77,12 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
 
         }
 
+    }
+
+    private fun cerrarsesion() {
+        auth.signOut()
+        val intent =Intent(this,MainActivity::class.java)
+        this.startActivity(intent)
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
