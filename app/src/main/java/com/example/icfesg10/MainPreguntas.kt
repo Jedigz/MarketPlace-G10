@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.Observer
 import com.example.icfesg10.database.SaberProDB
@@ -24,15 +26,12 @@ class MainPreguntas() : AppCompatActivity(), Parcelable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main_preguntas)
         binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.title = "Preguntas"
 
         auth = Firebase.auth
-
-        binding.btnCerrarsesion.setOnClickListener {
-            cerrarsesion()
-        }
 
         var listaPreguntas = emptyList<Pregunta>()
         val database = SaberProDB.getDatabase(this)
@@ -78,12 +77,6 @@ class MainPreguntas() : AppCompatActivity(), Parcelable {
 
     }
 
-    private fun cerrarsesion() {
-        auth.signOut()
-        val intent = Intent(this, MainActivity::class.java)
-        this.startActivity(intent)
-    }
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 
     }
@@ -100,5 +93,23 @@ class MainPreguntas() : AppCompatActivity(), Parcelable {
         override fun newArray(size: Int): Array<MainPreguntas?> {
             return arrayOfNulls(size)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_logout -> cerrarSesion()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun cerrarSesion() {
+        auth.signOut()
+        val intent = Intent(this, MainActivity::class.java)
+        this.startActivity(intent)
     }
 }

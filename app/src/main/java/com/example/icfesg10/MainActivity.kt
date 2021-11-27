@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
         auth = Firebase.auth
 
         binding.btningresar.setOnClickListener {
@@ -85,17 +86,4 @@ class MainActivity : AppCompatActivity() {
             //Registrese()
         }
     }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main_activity, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    private fun cerrarSesion() {
-        Firebase.auth.signOut()
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-
-    }
-
 }
