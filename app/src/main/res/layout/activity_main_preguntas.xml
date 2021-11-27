@@ -7,36 +7,38 @@
     android:orientation="vertical"
     tools:context="com.example.icfesg10.MainPreguntas">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/white" />
+
     <Button
         android:id="@+id/btnAdicionaPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adicionar pregunta"
-        />
-    <Button
-        android:id="@+id/btnCerrarsesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cerrar Sesion"
-        />
+        android:text="Adicionar pregunta" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <ListView
             android:id="@+id/lvPreguntas"
             android:layout_width="wrap_content"
-            android:layout_height="730dp"/>
+            android:layout_height="730dp" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>
