@@ -1,4 +1,4 @@
-package com.example.marketplaceg10
+package com.example.icfesg10
 
 import org.junit.Test
 

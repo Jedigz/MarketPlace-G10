@@ -1,4 +1,4 @@
-package com.example.marketplaceg10
+package com.example.icfesg10
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,20 +6,18 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.example.marketplaceg10.database.saberProDB
-import com.example.marketplaceg10.databinding.ActivityMainPreguntasBinding
-import com.example.marketplaceg10.databinding.ActivitySignupBinding
-import com.example.marketplaceg10.model.Pregunta
+import com.example.icfesg10.database.SaberProDB
+import com.example.icfesg10.databinding.ActivityMainPreguntasBinding
+import com.example.icfesg10.model.Pregunta
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main_preguntas.*
 
-class MainPreguntas() : AppCompatActivity(),Parcelable {
+class MainPreguntas() : AppCompatActivity(), Parcelable {
     private lateinit var binding: ActivityMainPreguntasBinding
-    private lateinit var auth:FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     constructor(parcel: Parcel) : this() {
     }
@@ -27,17 +25,17 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main_preguntas)
-        binding=ActivityMainPreguntasBinding.inflate(layoutInflater)
+        binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = Firebase.auth
 
-        binding.btnCerrarsesion.setOnClickListener{
+        binding.btnCerrarsesion.setOnClickListener {
             cerrarsesion()
         }
 
         var listaPreguntas = emptyList<Pregunta>()
-        val database = saberProDB.getDatabase(this)
+        val database = SaberProDB.getDatabase(this)
 
         database.SaberProDAO().getAllPreguntas().observe(this, Observer {
             listaPreguntas = it
@@ -68,7 +66,8 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
 
             supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.fragment_container_view,
+                .replace(
+                    R.id.fragment_container_view,
                     DetallePreguntaFragment::class.java,
                     pregunta,
                     "detallePregunta"
@@ -81,7 +80,7 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
 
     private fun cerrarsesion() {
         auth.signOut()
-        val intent =Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         this.startActivity(intent)
     }
 
@@ -102,5 +101,4 @@ class MainPreguntas() : AppCompatActivity(),Parcelable {
             return arrayOfNulls(size)
         }
     }
-
 }

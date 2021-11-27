@@ -10,7 +10,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.marketplaceg10"
+        applicationId 'com.example.icfesg10'
         minSdk 22
         targetSdk 31
         versionCode 1
@@ -33,7 +33,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
