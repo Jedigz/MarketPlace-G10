@@ -8,16 +8,47 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ListView
 import com.example.icfesg10.database.SaberProDB
+import com.example.icfesg10.databinding.FragmentPreguntasBinding
 import com.example.icfesg10.model.Pregunta
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_preguntas.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PreguntasFragment : Fragment() {
+    private lateinit var binding: FragmentPreguntasBinding
+
+    val database = Firebase.database
+    val dbReferencePreguntas = database.getReference("preguntas")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*     binding =FragmentPreguntasBinding.inflate(layoutInflater)
+             setContentView(binding.root)
+             Firebase.initialize(this)
+
+             binding.btnGuardar.setOnClickListener{
+                 guardarPreguntas()
+             }*/
+
     }
+/*
+    private fun guardarPreguntas() {
+        var pregunta = Pregunta(
+            UUID.randomUUID().toString(),
+            binding.edtTexto.toString(),
+            binding.edtopcion1.toString(),
+            binding.edtopcion2.toString(),
+            binding.edtOpcion3.toString(),
+            binding.edtRespuesta.toString(),
+        )
+      dbReferencePreguntas.child(pregunta.id)
+    }
+*/
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,5 +1,6 @@
 package com.example.icfesg10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -8,14 +9,25 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import com.example.icfesg10.databinding.ActivitySignupBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class Signup() : AppCompatActivity(), Parcelable {
+    private lateinit var binding: ActivitySignupBinding
+
+    private lateinit var auth: FirebaseAuth
+
     constructor(parcel: Parcel) : this() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        auth = Firebase.auth
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -37,12 +49,14 @@ class Signup() : AppCompatActivity(), Parcelable {
     }
 
     fun fnCrearcuenta(view: View) {
+
         val checkBox: CheckBox = findViewById<View>(R.id.cbTerminos) as CheckBox
         val etNombres = findViewById<EditText>(R.id.etNombres)
         val etApellidos = findViewById<EditText>(R.id.etApellidos)
         val etCorreo = findViewById<EditText>(R.id.etCorreo)
         val etConfirmaCorreo = findViewById<EditText>(R.id.etConfirmaCorreo)
         var correcto: Boolean = false
+
 
         if (etNombres.text.toString().trim() == "") {
             etNombres.error = "Campo no puede ser vacio"
@@ -70,5 +84,22 @@ class Signup() : AppCompatActivity(), Parcelable {
             ).show()
         else
             Toast.makeText(this, "Usuario Creado", Toast.LENGTH_LONG).show()
+
+        auth.createUserWithEmailAndPassword(etCorreo.text.toString(), "123456")
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    verPreguntasActivityMain()
+                } else {
+                }
+
+
+            }
+    }
+
+    private fun verPreguntasActivityMain() {
+        // val intent = intent (this, )
+        val intent = Intent(this, MainPreguntas::class.java)
+        startActivity(intent)
     }
 }

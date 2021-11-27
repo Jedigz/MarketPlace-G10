@@ -23,7 +23,12 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.4296875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_main_preguntas.xml" value="0.36186594202898553" />
+        <entry key="app/src/main/res/layout/activity_menu_profesor.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/activity_preguntas.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/fragment_detalle_pregunta.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/fragment_preguntas.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/preguntas_item.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.4296875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.4296875" />
       </map>

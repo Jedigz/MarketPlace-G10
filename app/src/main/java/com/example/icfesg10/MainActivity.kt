@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         val edtPassword = findViewById<EditText>(R.id.edtpassword)
 
         edtEmail.setText("")
+        edtEmail.requestFocus()
         edtPassword.setText("")
     }
 
@@ -82,6 +83,13 @@ class MainActivity : AppCompatActivity() {
         } else {
             //Registrese()
         }
+    }
+
+    private fun cerrarSesion() {
+        Firebase.auth.signOut()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
     }
 
 }
