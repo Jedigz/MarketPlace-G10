@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.example.icfesg10.model.Pregunta
-import kotlinx.android.synthetic.main.preguntas_item.view.*
 
 class PreguntasAdapter(private val mContext: Context, val listaPreguntas: List<Pregunta>) :
     ArrayAdapter<Pregunta>(mContext, 0, listaPreguntas) {
@@ -14,13 +14,13 @@ class PreguntasAdapter(private val mContext: Context, val listaPreguntas: List<P
         val layout =
             LayoutInflater.from(mContext).inflate(R.layout.preguntas_item, viewGroup, false)
         val pregunta = listaPreguntas[posicion]
-        /*layout.tvTexto.text=pregunta.PreTexto
-        layout.tvOpcion1.text=pregunta.Opcion1
+
+        /*layout.findViewById<TextView>(R.id.tvOpcion1).text=pregunta.Opcion1
         layout.tvOpcion2.text=pregunta.Opcion2
         layout.tvOpcion3.text=pregunta.Opcion3
         layout.tvRespuesta.text=pregunta.Respuesta*/
-        layout.tvArea.text = pregunta.Area
-        layout.tvDescripcion.text = pregunta.Descripcion
+        layout.findViewById<TextView>(R.id.tvArea).text = pregunta.Area
+        layout.findViewById<TextView>(R.id.tvDescripcion).text = pregunta.Descripcion
         return layout
     }
 }
