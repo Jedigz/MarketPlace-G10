@@ -1,5 +1,6 @@
 package com.example.icfesg10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -26,6 +27,9 @@ class AdicionarPreguntas : AppCompatActivity() {
         binding.btnGuardar.setOnClickListener{
             guardarPreguntas()
         }
+        binding.btnCancelar.setOnClickListener{
+            salir()
+        }
     }
 
     private fun guardarPreguntas() {
@@ -41,5 +45,9 @@ class AdicionarPreguntas : AppCompatActivity() {
         )
         dbReferencePreguntas.child(pregunta.id.toString()).setValue(pregunta)
         Toast.makeText(this,"Se Adicionó la pregunta correctememnte", Toast.LENGTH_LONG).show()
+    }
+    private fun salir(){
+        startActivity(Intent(this, MainPreguntas::class.java))
+
     }
 }

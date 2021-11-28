@@ -39,7 +39,6 @@ class MainPreguntas() : AppCompatActivity() {
         listaPreguntas = ArrayList<Pregunta>()
 
         binding.btnAdicionaPregunta.setOnClickListener {
-            //val intent = Intent(this, CrearPreguntasActivity::class.java)
             val intent = Intent(this, AdicionarPreguntas::class.java)
             this.startActivity(intent)
         }
@@ -48,10 +47,10 @@ class MainPreguntas() : AppCompatActivity() {
 
         binding.lvPreguntas.setOnItemClickListener { parent, view, position, id ->
             var pregunta = listaPreguntas[position]
-/*
-            val intent = Intent(this, EditActivity::class.java)
+
+            val intent = Intent(this, EditarPreguntas::class.java)
             intent.putExtra("pregunta", pregunta)
-            this.startActivity(intent)*/
+            this.startActivity(intent)
         }
     }
     private fun verListadoPreguntas() {
