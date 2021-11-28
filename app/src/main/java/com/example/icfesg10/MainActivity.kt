@@ -43,10 +43,14 @@ class MainActivity : AppCompatActivity() {
                 onLogin(edtEmail.text.toString(), edtPassword.text.toString())
             }
         }
+
+        binding.btnregistrese.setOnClickListener {
+            registrarse()
+        }
     }
 
 
-    fun Registrese() {
+    fun registrarse() {
         val intento = Intent(this, Signup::class.java)
         startActivity(intento)
     }

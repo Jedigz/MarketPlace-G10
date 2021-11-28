@@ -34,18 +34,18 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/etNombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombres"
+            android:inputType="textCapWords" />
+
+        <EditText
             android:id="@+id/etApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@color/cardview_dark_background"
             android:hint="Apellidos"
-            android:inputType="textCapWords" />
-
-        <EditText
-            android:id="@+id/etNombres"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombres"
             android:inputType="textCapWords" />
 
         <EditText
@@ -70,25 +70,42 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/edtpassword"
+            android:id="@+id/etContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="********"
-            android:inputType="textEmailAddress"
+            android:hint="Contraseña"
             android:password="true" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_soy_profesor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soy profesor" />
+
+            <RadioButton
+                android:id="@+id/radio_soy_estudiante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soy estudiante" />
+        </RadioGroup>
 
         <CheckBox
             android:id="@+id/cbTerminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Al crear tu cuenta en MakerPlace estás aceptando los Terminos y condiciones" />
+            android:text="He leído y acepto los términos y condiciones de uso" />
 
         <Button
+            android:id="@+id/btnRegistrarUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:onClick="fnCrearcuenta"
             android:text="Crear Cuenta" />
     </LinearLayout>
 
