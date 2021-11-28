@@ -12,7 +12,7 @@
         android:id="@+id/edtexto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Texto"
+        android:hint="@string/txt_detail_questions_text"
         android:enabled="false"
         />
 
@@ -20,7 +20,7 @@
         android:id="@+id/edtOpcion1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opcion 1"
+        android:hint="@string/txt_detail_questions_option_1"
         android:enabled="false"
         />
 
@@ -28,14 +28,14 @@
         android:id="@+id/edtOpcion2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opción 2"
+        android:hint="@string/txt_detail_questions_option_2"
         android:enabled="false"
         />
     <EditText
         android:id="@+id/edtOpcion3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opción 3"
+        android:hint="@string/txt_detail_questions_option_3"
         android:enabled="false"
         />
 
@@ -43,14 +43,14 @@
         android:id="@+id/edtRespuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Respuesta"
+        android:hint="@string/txt_detail_questions_answer"
         android:enabled="false"
         />
     <CheckBox
         android:id="@+id/chkEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar" />
+        android:text="@string/txt_detail_questions_edit" />
 
 
 

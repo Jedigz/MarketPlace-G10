@@ -11,12 +11,12 @@
     <item
         android:id="@+id/action_settings"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/txt_configuracion"
+        android:title="@string/txt_setting"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_logout"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:title="@string/txt_singooup"
+        android:title="@string/txt_get_out"
         app:showAsAction="never" />
 </menu>
