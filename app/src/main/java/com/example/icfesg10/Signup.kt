@@ -3,10 +3,7 @@ package com.example.icfesg10
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import com.example.icfesg10.databinding.ActivitySignupBinding
 import com.example.icfesg10.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +22,8 @@ class Signup() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.title = "Crear cuenta"
 
         Firebase.initialize(this)
         auth = Firebase.auth
@@ -89,10 +88,12 @@ class Signup() : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
             validate = false
-        }
-
-        if (!cbTerminos.isChecked) {
-            cbTerminos.error = "Debe marcar la casilla de terminos y condiciones"
+        } else if (!cbTerminos.isChecked) {
+            Toast.makeText(
+                this,
+                "Debe aceptar los terminos y condicioness",
+                Toast.LENGTH_LONG
+            ).show()
             validate = false
         }
 
@@ -129,6 +130,7 @@ class Signup() : AppCompatActivity() {
                         "Ocurrio un error al realizar el registro",
                         Toast.LENGTH_LONG
                     ).show()
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
         }

@@ -2,8 +2,9 @@ package com.example.icfesg10
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.icfesg10.databinding.ActivityMainPreguntasBinding
 import com.example.icfesg10.model.Pregunta
@@ -23,17 +24,17 @@ class MainPreguntas() : AppCompatActivity() {
     private lateinit var listaPreguntas: ArrayList<Pregunta>
     private lateinit var PreguntasAdapter: ArrayAdapter<Pregunta>
 
-    var database =Firebase.database
-    var dbReferenciaPreguntas= database.getReference("preguntas")
-
+    var database = Firebase.database
+    var dbReferenciaPreguntas = database.getReference("preguntas")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.title = "Preguntas"
 
         auth = Firebase.auth
-
         Firebase.initialize(this)
 
         listaPreguntas = ArrayList<Pregunta>()
@@ -53,8 +54,8 @@ class MainPreguntas() : AppCompatActivity() {
             this.startActivity(intent)
         }
     }
-    private fun verListadoPreguntas() {
 
+    private fun verListadoPreguntas() {
         val preguntaItemListener = object : ValueEventListener {
             override fun onDataChange(datasnapshot: DataSnapshot) {
                 for (pel in datasnapshot.children) {
@@ -90,7 +91,19 @@ class MainPreguntas() : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         this.startActivity(intent)
     }
- }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_logout -> cerrarSesion()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}
 
 
 

@@ -42,21 +42,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-mail"
+            android:text="@string/txt_email_login"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="123@abc.com"
+            android:hint="@string/txt_email_domain"
             android:inputType="textEmailAddress" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Password"
+            android:text="@string/txt_password_login"
             android:textSize="20sp" />
 
         <EditText
@@ -71,21 +71,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="INGRESAR" />
+            android:text="@string/txt_button_login" />
 
         <Button
             android:id="@+id/btnregistrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="REGISTRATE" />
+            android:text="@string/txt_button_sign_in" />
 
         <TextView
             android:id="@+id/btnolvidoclave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="¿Olvidaste tu clave?"
+            android:text="@string/txt_forgot_password"
             android:textSize="20sp" />
 
     </LinearLayout>

@@ -1,6 +1,36 @@
 <resources>
     <string name="app_name">Icfes G10</string>
-    <string name="txt_search">search</string>
-    <string name="txt_configuracion">Configuracion</string>
-    <string name="txt_singooup">Salir </string>
+    <string name="txt_search">Search</string>
+    <string name="txt_setting">Setting</string>
+    <string name="txt_get_out">Sign Out </string>
+    <string name="txt_email_login">Email</string>
+    <string name="txt_email_domain">Email@domain.com</string>
+    <string name="txt_password_login">Password</string>
+    <string name="txt_button_login">Login</string>
+    <string name="txt_button_sign_in">Sign In</string>
+    <string name="txt_forgot_password">¿Forgot Password?</string>
+    <string name="txt_add_question">Add Question</string>
+    <string name="txt_create_an_account">Create An Account</string>
+    <string name="txt_personal_information">Personal Information</string>
+    <string name="txt_register_last_name">Last Name</string>
+    <string name="txt_register_name">Name</string>
+    <string name="txt_register_username">Username</string>
+    <string name="txt_register_email">Email</string>
+    <string name="txt_register_confirm_email">Confirm Email</string>
+    <string name="txt_detail_questions_text">Text</string>
+    <string name="txt_detail_questions_option_1">Option 1</string>
+    <string name="txt_detail_questions_option_2">Option 2</string>
+    <string name="txt_detail_questions_option_3">Option 3</string>
+    <string name="txt_detail_questions_answer">Answer</string>
+    <string name="txt_detail_questions_edit">Edit</string>
+    <string name="txt_questions_text">Text</string>
+    <string name="txt_questions_option_1">Option 1</string>
+    <string name="txt_questions_option_2">Option 2</string>
+    <string name="txt_questions_option_3">Option 3</string>
+    <string name="txt_questions_answer">Answer</string>
+    <string name="txt_questions_category">Category</string>
+    <string name="txt_questions_description">Description</string>
+    <string name="txt_questions_save">Save</string>
+    <string name="txt_questions_cancel">Cancel</string>
+
 </resources>
