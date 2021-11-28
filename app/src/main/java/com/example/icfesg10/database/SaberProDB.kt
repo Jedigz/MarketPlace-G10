@@ -6,10 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.icfesg10.dao.SaberProDAO
 import com.example.icfesg10.model.Evaluacion
-import com.example.icfesg10.model.Pregunta
 import com.example.icfesg10.model.Usuario
 
-@Database(entities = [Usuario::class, Pregunta::class, Evaluacion::class], version = 1)
+@Database(entities = [Usuario::class, Evaluacion::class], version = 1)
 
 abstract class SaberProDB : RoomDatabase() {
 

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.icfesg10.database.SaberProDB
-import com.example.icfesg10.model.Pregunta
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,22 +16,8 @@ class MenuProfesorActivity : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val fragmento = inflater.inflate(R.layout.fragment_detalle_pregunta, container, false)
 
-        val context = activity?.applicationContext
-        val idpregunta = requireArguments().getInt("idPregunta")
-
-        verpregunta(fragmento, idpregunta)
-
-        return fragmento
-    }
-
-
+/*
     private fun verpregunta(fragmento: View, idPregunta: Int) {
         var pregunta: Pregunta = Pregunta(0, "", "", "", "", "", "", "")
 
@@ -50,7 +35,7 @@ class MenuProfesorActivity : Fragment() {
 
         }
         salir()
-    }
+    }*/
 
     private fun salir() {
         activity?.supportFragmentManager?.beginTransaction()

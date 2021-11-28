@@ -1,110 +1,89 @@
 package com.example.icfesg10
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import androidx.lifecycle.Observer
-import com.example.icfesg10.database.SaberProDB
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.icfesg10.databinding.ActivityMainPreguntasBinding
 import com.example.icfesg10.model.Pregunta
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main_preguntas.*
+import com.google.firebase.ktx.initialize
 
-class MainPreguntas() : AppCompatActivity(), Parcelable {
+class MainPreguntas() : AppCompatActivity() {
     private lateinit var binding: ActivityMainPreguntasBinding
     private lateinit var auth: FirebaseAuth
 
-    constructor(parcel: Parcel) : this() {
-    }
+    private lateinit var listaPreguntas: ArrayList<Pregunta>
+    private lateinit var PreguntasAdapter: ArrayAdapter<Pregunta>
+
+    var database =Firebase.database
+    var dbReferenciaPreguntas= database.getReference("preguntas")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = "Preguntas"
 
         auth = Firebase.auth
 
-        var listaPreguntas = emptyList<Pregunta>()
-        val database = SaberProDB.getDatabase(this)
+        Firebase.initialize(this)
 
-        database.SaberProDAO().getAllPreguntas().observe(this, Observer {
-            listaPreguntas = it
-            val adapter = PreguntasAdapter(this, listaPreguntas)
-            lvPreguntas.adapter = adapter
-        })
+        listaPreguntas = ArrayList<Pregunta>()
 
-
-        btnAdicionaPregunta.setOnClickListener {
-            //Se oculta el listado de Peliculas para mostrar la ventana de adicionar Pelicula
-            lvPreguntas.visibility = View.GONE
-
-            supportFragmentManager.beginTransaction()
-                .setReorderingAllowed(true)
-                .replace(
-                    R.id.fragment_container_view,
-                    PreguntasFragment::class.java,
-                    null,
-                    "Preguntas"
-                )
-                .commit()
-        }
-        lvPreguntas.setOnItemClickListener { parent, view, position, id ->
-            val pregunta = Bundle()
-            pregunta.putInt("idPregunta", listaPreguntas[position].id)
-
-            lvPreguntas.visibility = View.GONE
-
-            supportFragmentManager.beginTransaction()
-                .setReorderingAllowed(true)
-                .replace(
-                    R.id.fragment_container_view,
-                    DetallePreguntaFragment::class.java,
-                    pregunta,
-                    "detallePregunta"
-                )
-                .commit()
-
+        binding.btnAdicionaPregunta.setOnClickListener {
+            //val intent = Intent(this, CrearPreguntasActivity::class.java)
+            val intent = Intent(this, AdicionarPreguntas::class.java)
+            this.startActivity(intent)
         }
 
-    }
+        verListadoPreguntas()
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<MainPreguntas> {
-        override fun createFromParcel(parcel: Parcel): MainPreguntas {
-            return MainPreguntas(parcel)
-        }
-
-        override fun newArray(size: Int): Array<MainPreguntas?> {
-            return arrayOfNulls(size)
+        binding.lvPreguntas.setOnItemClickListener { parent, view, position, id ->
+            var pregunta = listaPreguntas[position]
+/*
+            val intent = Intent(this, EditActivity::class.java)
+            intent.putExtra("pregunta", pregunta)
+            this.startActivity(intent)*/
         }
     }
+    private fun verListadoPreguntas() {
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main_activity, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        val preguntaItemListener = object : ValueEventListener {
+            override fun onDataChange(datasnapshot: DataSnapshot) {
+                for (pel in datasnapshot.children) {
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_logout -> cerrarSesion()
+                    // Objeto MAP
+                    val mapPregunta: Map<String, Any> = pel.value as HashMap<String, Any>
+
+                    var pregunta: Pregunta = Pregunta(
+                        mapPregunta.get("id").toString(),
+                        mapPregunta.get("preTexto").toString(),
+                        mapPregunta.get("opcion1").toString(),
+                        mapPregunta.get("opcion2").toString(),
+                        mapPregunta.get("opcion3").toString(),
+                        mapPregunta.get("respuesta").toString(),
+                        mapPregunta.get("area").toString(),
+                        mapPregunta.get("descripcion").toString()
+                    )
+                    listaPreguntas.add(pregunta)
+                    PreguntasAdapter = PreguntasAdapter(this@MainPreguntas, listaPreguntas)
+                    binding.lvPreguntas.adapter = PreguntasAdapter
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
         }
-        return super.onOptionsItemSelected(item)
+        dbReferenciaPreguntas.addValueEventListener(preguntaItemListener)
     }
 
     private fun cerrarSesion() {
@@ -112,4 +91,8 @@ class MainPreguntas() : AppCompatActivity(), Parcelable {
         val intent = Intent(this, MainActivity::class.java)
         this.startActivity(intent)
     }
-}
+ }
+
+
+
+
