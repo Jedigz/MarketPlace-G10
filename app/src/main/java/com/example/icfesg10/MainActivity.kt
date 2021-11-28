@@ -86,8 +86,6 @@ class MainActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             startActivity(Intent(this, MainPreguntas::class.java))
-        } else {
-            //Registrese()
         }
     }
 }
