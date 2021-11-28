@@ -20,28 +20,35 @@ class EditarPreguntas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditarPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.title = "Editar pregunta"
 
         Firebase.initialize(this)
-        mostrarDatosPelicula()
+        mostrarDatosPregunta()
         binding.btnActualizar.setOnClickListener {
             actualizarPregunta()
         }
         binding.btnEliminar.setOnClickListener {
             eliminarPregunta()
         }
-        binding.btnCancelar.setOnClickListener{
+        binding.btnCancelar.setOnClickListener {
             salir()
         }
 
     }
+
     private fun eliminarPregunta() {
         dbReferencePregunta.child(binding.edtId.text.toString()).removeValue()
-        Toast.makeText(this , "Se eliminó la pelicula ${binding.edtTexto.text.toString()}", Toast.LENGTH_LONG).show()
+        Toast.makeText(
+            this,
+            "Se eliminó la pelicula ${binding.edtTexto.text.toString()}",
+            Toast.LENGTH_LONG
+        ).show()
 
-        verListadoPeliculas()
+        verListadoPreguntas()
     }
 
-    private fun mostrarDatosPelicula() {
+    private fun mostrarDatosPregunta() {
         var bundle = intent.extras
         val pregunta = bundle?.get("pregunta") as Pregunta
 
@@ -55,7 +62,7 @@ class EditarPreguntas : AppCompatActivity() {
         binding.edtDescripcion.setText(pregunta.Descripcion.toString())
     }
 
-    private fun actualizarPregunta(){
+    private fun actualizarPregunta() {
         var pregunta = Pregunta(
             binding.edtId.text.toString(),
             binding.edtTexto.text.toString(),
@@ -68,16 +75,15 @@ class EditarPreguntas : AppCompatActivity() {
         )
         dbReferencePregunta.child(pregunta.id).setValue(pregunta)
 
-        verListadoPeliculas()
+        verListadoPreguntas()
     }
 
-    private fun verListadoPeliculas() {
+    private fun verListadoPreguntas() {
         val intent = Intent(this, MainPreguntas::class.java)
         this.startActivity(intent)
     }
-    private fun salir(){
+
+    private fun salir() {
         startActivity(Intent(this, MainPreguntas::class.java))
-
     }
-
 }

@@ -21,13 +21,16 @@ class AdicionarPreguntas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAdicionarPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.title = "Nueva pregunta"
 
         Firebase.initialize(this)
 
-        binding.btnGuardar.setOnClickListener{
+        binding.btnGuardar.setOnClickListener {
             guardarPreguntas()
         }
-        binding.btnCancelar.setOnClickListener{
+
+        binding.btnCancelar.setOnClickListener {
             salir()
         }
     }
@@ -44,10 +47,12 @@ class AdicionarPreguntas : AppCompatActivity() {
             binding.edtDescripcion.text.toString()
         )
         dbReferencePreguntas.child(pregunta.id.toString()).setValue(pregunta)
-        Toast.makeText(this,"Se Adicionó la pregunta correctememnte", Toast.LENGTH_LONG).show()
-    }
-    private fun salir(){
-        startActivity(Intent(this, MainPreguntas::class.java))
+        Toast.makeText(this, "Se Adicionó la pregunta correctememnte", Toast.LENGTH_LONG).show()
 
+        this.startActivity(Intent(this, MainPreguntas::class.java))
+    }
+
+    private fun salir() {
+        startActivity(Intent(this, MainPreguntas::class.java))
     }
 }
