@@ -15,7 +15,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.initialize
 
 class MainPreguntas() : AppCompatActivity() {
     private lateinit var binding: ActivityMainPreguntasBinding
@@ -35,7 +34,6 @@ class MainPreguntas() : AppCompatActivity() {
         supportActionBar?.title = "Preguntas"
 
         auth = Firebase.auth
-        Firebase.initialize(this)
 
         listaPreguntas = ArrayList<Pregunta>()
 
@@ -92,7 +90,7 @@ class MainPreguntas() : AppCompatActivity() {
         this.startActivity(intent)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main_activity, menu)
         return super.onCreateOptionsMenu(menu)
     }
