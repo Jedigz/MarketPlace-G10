@@ -32,7 +32,20 @@
     <string name="txt_questions_description">Descripcion</string>
     <string name="txt_questions_save">Guardar</string>
     <string name="txt_questions_cancel">Cancelar</string>
-
+    <string name="txt_edit_questions_text">Texto:</string>
+    <string name="txt_edit_questions_text_2">Texto</string>
+    <string name="txt_edit_questions_option_1">Opcion 1:</string>
+    <string name="txt_edit_questions_option_1_1">Opcion 1</string>
+    <string name="txt_edit_questions_option_2">Opcion 2:</string>
+    <string name="txt_edit_questions_option_2_1">Opcion 2</string>
+    <string name="txt_edit_questions_option_3">Opcion 3:</string>
+    <string name="txt_edit_questions_option_3_1">Opcion 3</string>
+    <string name="txt_edit_questions_answer">Respuesta:</string>
+    <string name="txt_edit_questions_answer_1">Respuesta</string>
+    <string name="txt_edit_questions_category">Categoria:</string>
+    <string name="txt_edit_questions_category_1">Categoria</string>
+    <string name="txt_edit_questions_description">Descripcion:</string>
+    <string name="txt_edit_questions_description_1">Descripcion</string>
 
 
 
