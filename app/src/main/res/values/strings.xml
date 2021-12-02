@@ -2,7 +2,7 @@
     <string name="app_name">Icfes G10</string>
     <string name="txt_search">Search</string>
     <string name="txt_setting">Setting</string>
-    <string name="txt_get_out">Get Out </string>
+    <string name="txt_get_out">Sign Out </string>
     <string name="txt_email_login">Email</string>
     <string name="txt_email_domain">Email@domain.com</string>
     <string name="txt_password_login">Password</string>
