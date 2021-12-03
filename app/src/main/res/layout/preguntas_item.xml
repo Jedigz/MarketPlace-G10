@@ -49,14 +49,14 @@
             android:id="@+id/tvArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categoria"
+            android:text="@string/txt_questions_item_category"
             />
         <TextView
             android:layout_marginTop="10dp"
             android:id="@+id/tvDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Área"
+            android:text="@string/txt_questions_item_area"
             />
     </LinearLayout>
 

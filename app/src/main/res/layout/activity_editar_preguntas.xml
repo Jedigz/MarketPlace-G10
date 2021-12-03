@@ -30,13 +30,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Texto:"
+            android:text="@string/txt_edit_questions_text"
             android:gravity="center_vertical"/>
         <EditText
             android:id="@+id/edtTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Texto" />
+            android:hint="@string/txt_edit_questions_text_2" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,13 +46,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Opcion 1:"
+            android:text="@string/txt_edit_questions_option_1"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtopcion1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opción 1" />
+        android:hint="@string/txt_edit_questions_option_1_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,13 +62,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Opcion 2:"
+            android:text="@string/txt_edit_questions_option_2"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtopcion2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opción 2" />
+        android:hint="@string/txt_edit_questions_option_2_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -78,13 +78,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Opcion 3:"
+            android:text="@string/txt_edit_questions_option_3"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtOpcion3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Opción 3" />
+        android:hint="@string/txt_edit_questions_option_3_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,13 +94,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Respuesta:"
+            android:text="@string/txt_edit_questions_answer"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtRespuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Respuesta" />
+        android:hint="@string/txt_edit_questions_answer_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -110,13 +110,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Categoria:"
+            android:text="@string/txt_edit_questions_category"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Categoria" />
+        android:hint="@string/txt_edit_questions_category_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,30 +126,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Descripción:"
+            android:text="@string/txt_edit_questions_description"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción" />
+        android:hint="@string/txt_edit_questions_description_1" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnActualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Actualizar" />
+        android:text="@string/txt_edit_questions_button_upgrade" />
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar" />
+        android:text="@string/txt_edit_questions_button_remove" />
 
     <Button
         android:id="@+id/btnCancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="@string/txt_edit_questions_button_cancel" />
 
 </LinearLayout>
