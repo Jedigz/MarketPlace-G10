@@ -57,7 +57,29 @@
     <string name="txt_questions_item_category">Categoria</string>
     <string name="txt_questions_item_area">Area</string>
     <string name="txt_add_questions_title">Nueva Pregunta</string>
+    <string name="txt_add_questions_message">Se Adicionó la pregunta correctememnte</string>
     <string name="txt_edit_questions_remove">Se elimino la pregunta</string>
+    <string name="txt_edit_questions_title">Editar Pregunta</string>
+    <string name="txt_main_activity_error_email">El correo es invalido o es vacío</string>
+    <string name="txt_main_activity_error_password">La contraseña no puede ser vacía</string>
+    <string name="txt_main_activity_on_login">El usuario o contraseña no se reconocen</string>
+    <string name="txt_main_questions_title">Preguntas</string>
+    <string name="txt_signup_title">Crear Cuenta</string>
+    <string name="txt_signup_form_error_name">El nombre no puede ser vacio</string>
+    <string name="txt_signup_form_error_last_name">Los apellidos no pueden ser vacios</string>
+    <string name="txt_signup_form_error_username">El nombre de usuario no puede ser vacio</string>
+    <string name="txt_signup_form_error_email">El correo es invalido o es vacío</string>
+    <string name="txt_signup_form_error_confirm_email">La confirmación del correo es invalida o es vacía</string>
+    <string name="txt_signup_form_error_password">La contraseña no puede ser vacía, logitud minima 6 caracteres</string>
+    <string name="txt_signup_form_error_options">Seleccione que tipo de usuario es</string>
+    <string name="txt_signup_form_error_terms">Debe aceptar los terminos y condiciones</string>
+    <string name="txt_signup_text_registration_right">El usuario se registro correctamente</string>
+    <string name="txt_signup_text_registration_incorrect">Ocurrio un error al realizar el registro</string>
+
+
+
+
+
 
 
 

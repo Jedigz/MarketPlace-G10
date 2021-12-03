@@ -31,7 +31,7 @@ class MainPreguntas() : AppCompatActivity() {
         binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = "Preguntas"
+        supportActionBar?.title =  resources.getString(R.string.txt_main_questions_title)
 
         auth = Firebase.auth
 

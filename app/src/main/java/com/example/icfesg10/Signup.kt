@@ -23,7 +23,7 @@ class Signup() : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = "Crear cuenta"
+        supportActionBar?.title =  resources.getString(R.string.txt_signup_title)
 
         Firebase.initialize(this)
         auth = Firebase.auth
@@ -47,24 +47,24 @@ class Signup() : AppCompatActivity() {
 
 
         if (edtNombres.text.toString().trim() == "") {
-            edtNombres.error = "El nombre no puede ser vacio"
+            edtNombres.error =  resources.getString(R.string.txt_signup_form_error_name)
             validate = false
         }
 
         if (edtApellidos.text.toString().trim() == "") {
-            edtApellidos.error = "Los apellidos no pueden ser vacios"
+            edtApellidos.error =  resources.getString(R.string.txt_signup_form_error_last_name)
             validate = false
         }
 
         if (edtUsuario.text.toString().trim() == "") {
-            edtUsuario.error = "El nombre de usuario no puede ser vacio"
+            edtUsuario.error =  resources.getString(R.string.txt_signup_form_error_username)
             validate = false
         }
 
         if (edtCorreo.text.toString().trim() == ""
             || !android.util.Patterns.EMAIL_ADDRESS.matcher(edtCorreo.text).matches()
         ) {
-            edtCorreo.error = "El correo es invalido o es vacío"
+            edtCorreo.error =  resources.getString(R.string.txt_signup_form_error_email)
             validate = false
         }
 
@@ -72,26 +72,26 @@ class Signup() : AppCompatActivity() {
             || !android.util.Patterns.EMAIL_ADDRESS.matcher(edtConfirmaCorreo.text).matches()
             || edtCorreo.text.toString() != edtConfirmaCorreo.text.toString()
         ) {
-            edtConfirmaCorreo.error = "La confirmación del correo es invalida o es vacía"
+            edtConfirmaCorreo.error =  resources.getString(R.string.txt_signup_form_error_confirm_email)
             validate = false
         }
 
         if (edtContrasena.text.toString().trim() == "" || edtContrasena.text.length <= 6) {
-            edtContrasena.error = "La contraseña no puede ser vacía, logitud minima 6 caracteres"
+            edtContrasena.error =  resources.getString(R.string.txt_signup_form_error_password)
             validate = false
         }
 
         if (!rbSoyProfesor.isChecked && !rbSoyEstudiante.isChecked) {
             Toast.makeText(
                 this,
-                "Seleccione que tipo de usuario es",
+                resources.getString(R.string.txt_signup_form_error_options),
                 Toast.LENGTH_LONG
             ).show()
             validate = false
         } else if (!cbTerminos.isChecked) {
             Toast.makeText(
                 this,
-                "Debe aceptar los terminos y condicioness",
+                resources.getString(R.string.txt_signup_form_error_terms),
                 Toast.LENGTH_LONG
             ).show()
             validate = false
@@ -120,14 +120,14 @@ class Signup() : AppCompatActivity() {
                         startActivity(Intent(this, MainActivity::class.java))
                         Toast.makeText(
                             this,
-                            "El usuario se registro correctamente",
+                            resources.getString(R.string.txt_signup_text_registration_right),
                             Toast.LENGTH_LONG
                         ).show()
                     }
                 } else {
                     Toast.makeText(
                         this,
-                        "Ocurrio un error al realizar el registro",
+                        resources.getString(R.string.txt_signup_text_registration_incorrect),
                         Toast.LENGTH_LONG
                     ).show()
                     startActivity(Intent(this, MainActivity::class.java))

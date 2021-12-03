@@ -22,7 +22,7 @@ class AdicionarPreguntas : AppCompatActivity() {
         binding = ActivityAdicionarPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = R.string.txt_add_questions_title.toString()
+        supportActionBar?.title =  resources.getString(R.string.txt_add_questions_title)
 
         Firebase.initialize(this)
 
@@ -47,7 +47,7 @@ class AdicionarPreguntas : AppCompatActivity() {
             binding.edtDescripcion.text.toString()
         )
         dbReferencePreguntas.child(pregunta.id.toString()).setValue(pregunta)
-        Toast.makeText(this, "Se Adicionó la pregunta correctememnte", Toast.LENGTH_LONG).show()
+        Toast.makeText(this,  resources.getString(R.string.txt_add_questions_message), Toast.LENGTH_LONG).show()
 
         this.startActivity(Intent(this, MainPreguntas::class.java))
     }

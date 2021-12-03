@@ -52,6 +52,7 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.4.0'
     implementation 'androidx.fragment:fragment-ktx:1.4.0'
     implementation 'com.google.firebase:firebase-appcheck-debug:16.0.0-beta04'
+    implementation 'com.google.firebase:firebase-appcheck:16.0.0-beta03'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
             if (edtEmail.text.toString().trim() == ""
                 || !android.util.Patterns.EMAIL_ADDRESS.matcher(edtEmail.text).matches()
             ) {
-                edtEmail.error = "El e-mail es invalido o es vacío"
+                edtEmail.error = resources.getString(R.string.txt_main_activity_error_email)
                 validate = false
             }
 
             if (edtPassword.text.toString().trim() == "") {
-                edtPassword.error = "La contraseña no puede ser vacía"
+                edtPassword.error = resources.getString(R.string.txt_main_activity_error_password)
                 validate = false
             }
 
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     clearFormLogin()
                     Toast.makeText(
                         this,
-                        "El usuario o contraseña no se reconocen",
+                        resources.getString(R.string.txt_main_activity_on_login),
                         Toast.LENGTH_LONG
                     ).show()
                 }

@@ -21,7 +21,7 @@ class EditarPreguntas : AppCompatActivity() {
         binding = ActivityEditarPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = "Editar pregunta"
+        supportActionBar?.title =  resources.getString(R.string.txt_edit_questions_title)
 
         Firebase.initialize(this)
         mostrarDatosPregunta()
@@ -41,7 +41,7 @@ class EditarPreguntas : AppCompatActivity() {
         dbReferencePregunta.child(binding.edtId.text.toString()).removeValue()
         Toast.makeText(
             this,
-             R.string.txt_edit_questions_remove.toString() + " ${binding.edtTexto.text.toString()}",
+            resources.getString(R.string.txt_edit_questions_remove) + " ${binding.edtTexto.text.toString()}",
             Toast.LENGTH_LONG
         ).show()
 

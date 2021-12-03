@@ -57,5 +57,26 @@
     <string name="txt_questions_item_category">Category</string>
     <string name="txt_questions_item_area">Area</string>
     <string name="txt_add_questions_title">New Questions</string>
+    <string name="txt_add_questions_message">The question was added correctly</string>
     <string name="txt_edit_questions_remove">The question was deleted</string>
+    <string name="txt_edit_questions_title">Edit Questions</string>
+    <string name="txt_main_activity_error_email">The email is invalid or empty</string>
+    <string name="txt_main_activity_error_password">Password cannot be empty</string>
+    <string name="txt_main_activity_on_login">The username or password is not recognized</string>
+    <string name="txt_main_questions_title">Questions</string>
+    <string name="txt_signup_title">Create Account</string>
+    <string name="txt_signup_form_error_name">The name cannot be empty</string>
+    <string name="txt_signup_form_error_last_name">Last names cannot be empty</string>
+    <string name="txt_signup_form_error_username">Username cannot be empty</string>
+    <string name="txt_signup_form_error_email">The email is invalid or empty</string>
+    <string name="txt_signup_form_error_confirm_email">Email confirmation is invalid or empty</string>
+    <string name="txt_signup_form_error_password">The password cannot be empty, minimum length 6 characters</string>
+    <string name="txt_signup_form_error_options">Select what type of user is</string>
+    <string name="txt_signup_form_error_terms">You must accept the terms and conditions</string>
+    <string name="txt_signup_text_registration_right">User successfully registered</string>
+    <string name="txt_signup_text_registration_incorrect">An error occurred while registering</string>
+
+
+
+
 </resources>
