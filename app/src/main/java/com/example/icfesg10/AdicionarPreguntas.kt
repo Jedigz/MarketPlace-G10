@@ -22,7 +22,7 @@ class AdicionarPreguntas : AppCompatActivity() {
         binding = ActivityAdicionarPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title = "Nueva pregunta"
+        supportActionBar?.title = R.string.txt_add_questions_title.toString()
 
         Firebase.initialize(this)
 

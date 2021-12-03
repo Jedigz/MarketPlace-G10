@@ -27,7 +27,7 @@
             android:id="@+id/etNombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombres"
+            android:hint="@string/txt_register_name"
             android:inputType="textCapWords" />
 
         <EditText
@@ -35,35 +35,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@color/cardview_dark_background"
-            android:hint="Apellidos"
+            android:hint="@string/txt_register_last_name"
             android:inputType="textCapWords" />
 
         <EditText
             android:id="@+id/etUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
+            android:hint="@string/txt_register_username"
             android:inputType="textCapWords" />
 
         <EditText
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo"
+            android:hint="@string/txt_register_email"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/etConfirmaCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirma Correo"
+            android:hint="@string/txt_register_confirm_email"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/etContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
+            android:hint="@string/txt_register_password"
             android:password="true" />
 
         <RadioGroup
@@ -75,13 +75,13 @@
                 android:id="@+id/radio_soy_profesor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soy profesor" />
+                android:text="@string/txt_register_option_teacher" />
 
             <RadioButton
                 android:id="@+id/radio_soy_estudiante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soy estudiante" />
+                android:text="@string/txt_register_option_student" />
         </RadioGroup>
 
         <CheckBox
@@ -89,14 +89,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="He leído y acepto los términos y condiciones de uso" />
+            android:text="@string/txt_register_option_terms" />
 
         <Button
             android:id="@+id/btnRegistrarUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Crear Cuenta" />
+            android:text="@string/txt_register_button" />
     </LinearLayout>
 
 </LinearLayout>

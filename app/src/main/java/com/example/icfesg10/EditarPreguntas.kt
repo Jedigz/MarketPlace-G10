@@ -41,7 +41,7 @@ class EditarPreguntas : AppCompatActivity() {
         dbReferencePregunta.child(binding.edtId.text.toString()).removeValue()
         Toast.makeText(
             this,
-            "Se eliminó la pelicula ${binding.edtTexto.text.toString()}",
+             R.string.txt_edit_questions_remove.toString() + " ${binding.edtTexto.text.toString()}",
             Toast.LENGTH_LONG
         ).show()
 

@@ -17,6 +17,11 @@
     <string name="txt_register_username">Usuario</string>
     <string name="txt_register_email">Correo</string>
     <string name="txt_register_confirm_email">Confirmar Correo</string>
+    <string name="txt_register_password">Contraseña</string>
+    <string name="txt_register_option_teacher">Soy profesor</string>
+    <string name="txt_register_option_student">Soy estudiante</string>
+    <string name="txt_register_option_terms">He leído y acepto los términos y condiciones de uso</string>
+    <string name="txt_register_button">CREAR CUENTA</string>
     <string name="txt_detail_questions_text">Texto</string>
     <string name="txt_detail_questions_option_1">Opcion 1</string>
     <string name="txt_detail_questions_option_2">Opcion 2</string>
@@ -46,6 +51,13 @@
     <string name="txt_edit_questions_category_1">Categoria</string>
     <string name="txt_edit_questions_description">Descripcion:</string>
     <string name="txt_edit_questions_description_1">Descripcion</string>
+    <string name="txt_edit_questions_button_upgrade">ACTUALIZAR</string>
+    <string name="txt_edit_questions_button_remove">ELIMINAR</string>
+    <string name="txt_edit_questions_button_cancel">CANCELAR</string>
+    <string name="txt_questions_item_category">Categoria</string>
+    <string name="txt_questions_item_area">Area</string>
+    <string name="txt_add_questions_title">Nueva Pregunta</string>
+    <string name="txt_edit_questions_remove">Se elimino la pregunta</string>
 
 
 

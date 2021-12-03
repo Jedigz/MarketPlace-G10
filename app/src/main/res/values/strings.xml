@@ -17,6 +17,11 @@
     <string name="txt_register_username">Username</string>
     <string name="txt_register_email">Email</string>
     <string name="txt_register_confirm_email">Confirm Email</string>
+    <string name="txt_register_password">Password</string>
+    <string name="txt_register_option_teacher">I am a teacher</string>
+    <string name="txt_register_option_student">I am a student</string>
+    <string name="txt_register_option_terms">I have read and accept the terms and conditions of use</string>
+    <string name="txt_register_button">CREATE ACCOUNT</string>
     <string name="txt_detail_questions_text">Text</string>
     <string name="txt_detail_questions_option_1">Option 1</string>
     <string name="txt_detail_questions_option_2">Option 2</string>
@@ -46,4 +51,11 @@
     <string name="txt_edit_questions_category_1">Category</string>
     <string name="txt_edit_questions_description">Description:</string>
     <string name="txt_edit_questions_description_1">Description</string>
+    <string name="txt_edit_questions_button_upgrade">UPGRADE</string>
+    <string name="txt_edit_questions_button_remove">REMOVE</string>
+    <string name="txt_edit_questions_button_cancel">CANCEL</string>
+    <string name="txt_questions_item_category">Category</string>
+    <string name="txt_questions_item_area">Area</string>
+    <string name="txt_add_questions_title">New Questions</string>
+    <string name="txt_edit_questions_remove">The question was deleted</string>
 </resources>

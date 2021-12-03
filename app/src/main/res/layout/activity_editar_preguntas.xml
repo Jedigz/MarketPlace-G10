@@ -126,30 +126,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Descripción:"
+            android:text="@string/txt_edit_questions_description"
             android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción" />
+        android:hint="@string/txt_edit_questions_description_1" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnActualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Actualizar" />
+        android:text="@string/txt_edit_questions_button_upgrade" />
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar" />
+        android:text="@string/txt_edit_questions_button_remove" />
 
     <Button
         android:id="@+id/btnCancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="@string/txt_edit_questions_button_cancel" />
 
 </LinearLayout>
