@@ -31,7 +31,8 @@ class MainPreguntas() : AppCompatActivity() {
         binding = ActivityMainPreguntasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.title =  resources.getString(R.string.txt_main_questions_title)
+        supportActionBar?.title = resources.getString(R.string.txt_main_questions_title)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         auth = Firebase.auth
 
@@ -97,9 +98,20 @@ class MainPreguntas() : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_logout -> cerrarSesion()
+            R.id.action_logout -> {
+                cerrarSesion()
+            }
+            android.R.id.home -> {
+                irPanel()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun irPanel() {
+        val intent = Intent(this, MainDashboard::class.java)
+        this.startActivity(intent)
     }
 }
 
