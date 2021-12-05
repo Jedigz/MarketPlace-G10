@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IcfesG10">
         <activity
+            android:name=".MainCuestionarios"
+            android:exported="false" />
+        <activity
+            android:name=".MainDashboard"
+            android:exported="false" />
+        <activity
             android:name=".EditarPreguntas"
             android:exported="false" />
         <activity

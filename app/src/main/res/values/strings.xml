@@ -75,8 +75,12 @@
     <string name="txt_signup_form_error_terms">You must accept the terms and conditions</string>
     <string name="txt_signup_text_registration_right">User successfully registered</string>
     <string name="txt_signup_text_registration_incorrect">An error occurred while registering</string>
-
-
-
+    <string name="txt_add_test">Add Test</string>
+    <string name="txt_main_test_title">Tests</string>
+    <string name="txt_test_item_name">Test</string>
+    <string name="dashboard_page_title">Dashboard</string>
+    <string name="btn_dashboard_show_tests">Show tests</string>
+    <string name="btn_dashboard_show_questions">Show questions</string>
+    <string name="txt_show_test_label">Test:</string>
 
 </resources>

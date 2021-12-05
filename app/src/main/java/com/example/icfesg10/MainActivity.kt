@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    startActivity(Intent(this, MainPreguntas::class.java))
+                    startActivity(Intent(this, MainDashboard::class.java))
                 } else {
                     clearFormLogin()
                     Toast.makeText(
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            startActivity(Intent(this, MainPreguntas::class.java))
+            startActivity(Intent(this, MainDashboard::class.java))
         }
     }
 }
